@@ -4,7 +4,7 @@
 #
 Name     : R-strucchange
 Version  : 1.5.1
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/strucchange_1.5-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/strucchange_1.5-1.tar.gz
 Summary  : Testing, Monitoring, and Dating Structural Changes
