@@ -4,7 +4,7 @@
 #
 Name     : R-strucchange
 Version  : 1.5.1
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/strucchange_1.5-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/strucchange_1.5-1.tar.gz
 Summary  : Testing, Monitoring, and Dating Structural Changes
@@ -20,19 +20,10 @@ BuildRequires : R-mvtnorm
 BuildRequires : R-sandwich
 BuildRequires : R-tseries
 BuildRequires : R-zoo
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-regression models. strucchange features tests/methods from
-	     the generalized fluctuation test framework as well as from
-	     the F test (Chow test) framework. This includes methods to
-	     fit, plot and test fluctuation processes (e.g., CUSUM, MOSUM,
-	     recursive/moving estimates) and F statistics, respectively.
-             It is possible to monitor incoming data online using
-             fluctuation processes.
-             Finally, the breakpoints in regression models with structural
-             changes can be estimated together with confidence intervals.
-             Emphasis is always given to methods for visualizing the data.
+No detailed description available
 
 %prep
 %setup -q -c -n strucchange
@@ -42,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521209647
+export SOURCE_DATE_EPOCH=1552847498
 
 %install
+export SOURCE_DATE_EPOCH=1552847498
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521209647
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -81,8 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library strucchange|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  strucchange || :
 
 
 %files
@@ -120,3 +110,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/strucchange/help/strucchange.rdx
 /usr/lib64/R/library/strucchange/html/00Index.html
 /usr/lib64/R/library/strucchange/html/R.css
+/usr/lib64/R/library/strucchange/tests/Examples/strucchange-Ex.Rout.save
+/usr/lib64/R/library/strucchange/tests/strucchange-tests.R
+/usr/lib64/R/library/strucchange/tests/strucchange-tests.Rout.save
