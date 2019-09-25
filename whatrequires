@@ -1,4 +1,4 @@
 # This file contains recursive sources that require this package
 R-lmtest
 R-party
-R-partykit
+R-varImp
