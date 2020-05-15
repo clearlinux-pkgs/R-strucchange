@@ -4,7 +4,7 @@
 #
 Name     : R-strucchange
 Version  : 1.5.2
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/strucchange_1.5-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/strucchange_1.5-2.tar.gz
 Summary  : Testing, Monitoring, and Dating Structural Changes
@@ -18,7 +18,16 @@ BuildRequires : R-zoo
 BuildRequires : buildreq-R
 
 %description
-No detailed description available
+regression models. strucchange features tests/methods from
+	     the generalized fluctuation test framework as well as from
+	     the F test (Chow test) framework. This includes methods to
+	     fit, plot and test fluctuation processes (e.g., CUSUM, MOSUM,
+	     recursive/moving estimates) and F statistics, respectively.
+             It is possible to monitor incoming data online using
+             fluctuation processes.
+             Finally, the breakpoints in regression models with structural
+             changes can be estimated together with confidence intervals.
+             Emphasis is always given to methods for visualizing the data.
 
 %package lib
 Summary: lib components for the R-strucchange package.
@@ -30,21 +39,22 @@ lib components for the R-strucchange package.
 
 %prep
 %setup -q -c -n strucchange
+cd %{_builddir}/strucchange
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570913018
+export SOURCE_DATE_EPOCH=1589575856
 
 %install
-export SOURCE_DATE_EPOCH=1570913018
+export SOURCE_DATE_EPOCH=1589575856
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
