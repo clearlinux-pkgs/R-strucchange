@@ -4,7 +4,7 @@
 #
 Name     : R-strucchange
 Version  : 1.5.2
-Release  : 37
+Release  : 38
 URL      : https://cran.r-project.org/src/contrib/strucchange_1.5-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/strucchange_1.5-2.tar.gz
 Summary  : Testing, Monitoring, and Dating Structural Changes
@@ -46,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589575856
+export SOURCE_DATE_EPOCH=1620764449
 
 %install
-export SOURCE_DATE_EPOCH=1589575856
+export SOURCE_DATE_EPOCH=1620764449
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -131,3 +131,4 @@ R CMD check --no-manual --no-examples --no-codoc strucchange || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/strucchange/libs/strucchange.so
 /usr/lib64/R/library/strucchange/libs/strucchange.so.avx2
+/usr/lib64/R/library/strucchange/libs/strucchange.so.avx512
