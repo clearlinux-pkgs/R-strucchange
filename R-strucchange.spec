@@ -4,7 +4,7 @@
 #
 Name     : R-strucchange
 Version  : 1.5.3
-Release  : 55
+Release  : 56
 URL      : https://cran.r-project.org/src/contrib/strucchange_1.5-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/strucchange_1.5-3.tar.gz
 Summary  : Testing, Monitoring, and Dating Structural Changes
